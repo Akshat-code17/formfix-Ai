@@ -1,0 +1,23 @@
+{
+  "answers": {
+    "full_name": "Fictional Student",
+    "birth_date": "2004-02-29",
+    "student_id": "000042",
+    "address": "7 Imaginary Lane, Demo Town",
+    "pin": "012345",
+    "contact": "",
+    "course": "Science",
+    "study_year": "2",
+    "start_date": "2026-06-01",
+    "support_type": "standard",
+    "travel_reason": "",
+    "support_number": "SD-000123",
+    "confirm_student_id": "000042",
+    "declaration_date": "2026-09-18"
+  },
+  "documentReadiness": {
+    "enrollment": "ready",
+    "support_record": "ready",
+    "travel_plan": "not_applicable"
+  }
+}

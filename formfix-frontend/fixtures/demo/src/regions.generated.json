@@ -1,0 +1,398 @@
+{
+  "p1-title": {
+    "page": 1,
+    "bbox": {
+      "x": 0.09407,
+      "y": 0.1164,
+      "width": 0.66136,
+      "height": 0.03022
+    }
+  },
+  "p1-synthetic": {
+    "page": 1,
+    "bbox": {
+      "x": 0.09407,
+      "y": 0.1585,
+      "width": 0.81185,
+      "height": 0.0334
+    }
+  },
+  "sec-a-head": {
+    "page": 1,
+    "bbox": {
+      "x": 0.09407,
+      "y": 0.2406,
+      "width": 0.30763,
+      "height": 0.02465
+    }
+  },
+  "src-full-name": {
+    "page": 1,
+    "bbox": {
+      "x": 0.09407,
+      "y": 0.28425,
+      "width": 0.64297,
+      "height": 0.02226
+    }
+  },
+  "in-full-name": {
+    "page": 1,
+    "bbox": {
+      "x": 0.09407,
+      "y": 0.31008,
+      "width": 0.81185,
+      "height": 0.02851
+    }
+  },
+  "src-dob": {
+    "page": 1,
+    "bbox": {
+      "x": 0.09407,
+      "y": 0.35996,
+      "width": 0.54302,
+      "height": 0.02226
+    }
+  },
+  "in-dob": {
+    "page": 1,
+    "bbox": {
+      "x": 0.09407,
+      "y": 0.38579,
+      "width": 0.81185,
+      "height": 0.02851
+    }
+  },
+  "src-enrolment": {
+    "page": 1,
+    "bbox": {
+      "x": 0.09407,
+      "y": 0.43567,
+      "width": 0.76279,
+      "height": 0.03977
+    }
+  },
+  "in-enrolment": {
+    "page": 1,
+    "bbox": {
+      "x": 0.09407,
+      "y": 0.47901,
+      "width": 0.81185,
+      "height": 0.02851
+    }
+  },
+  "sec-a-head-2": {
+    "page": 2,
+    "bbox": {
+      "x": 0.09407,
+      "y": 0.13779,
+      "width": 0.42757,
+      "height": 0.02465
+    }
+  },
+  "src-category": {
+    "page": 2,
+    "bbox": {
+      "x": 0.09407,
+      "y": 0.18144,
+      "width": 0.66206,
+      "height": 0.02226
+    }
+  },
+  "in-category": {
+    "page": 2,
+    "bbox": {
+      "x": 0.09407,
+      "y": 0.20726,
+      "width": 0.27292,
+      "height": 0.02226
+    }
+  },
+  "src-category-other": {
+    "page": 2,
+    "bbox": {
+      "x": 0.09407,
+      "y": 0.2509,
+      "width": 0.77135,
+      "height": 0.03977
+    }
+  },
+  "in-category-other": {
+    "page": 2,
+    "bbox": {
+      "x": 0.09407,
+      "y": 0.29423,
+      "width": 0.81185,
+      "height": 0.02851
+    }
+  },
+  "src-section-a-note": {
+    "page": 2,
+    "bbox": {
+      "x": 0.09407,
+      "y": 0.33699,
+      "width": 0.4978,
+      "height": 0.01908
+    }
+  },
+  "sec-b-head": {
+    "page": 3,
+    "bbox": {
+      "x": 0.09407,
+      "y": 0.13779,
+      "width": 0.34708,
+      "height": 0.02465
+    }
+  },
+  "src-address": {
+    "page": 3,
+    "bbox": {
+      "x": 0.09407,
+      "y": 0.18144,
+      "width": 0.78384,
+      "height": 0.03977
+    }
+  },
+  "in-address": {
+    "page": 3,
+    "bbox": {
+      "x": 0.09407,
+      "y": 0.22477,
+      "width": 0.81185,
+      "height": 0.0784
+    }
+  },
+  "src-city": {
+    "page": 3,
+    "bbox": {
+      "x": 0.09407,
+      "y": 0.32454,
+      "width": 0.21606,
+      "height": 0.02226
+    }
+  },
+  "in-city": {
+    "page": 3,
+    "bbox": {
+      "x": 0.09407,
+      "y": 0.35037,
+      "width": 0.81185,
+      "height": 0.02851
+    }
+  },
+  "src-pin": {
+    "page": 3,
+    "bbox": {
+      "x": 0.09407,
+      "y": 0.40025,
+      "width": 0.46212,
+      "height": 0.02226
+    }
+  },
+  "in-pin": {
+    "page": 3,
+    "bbox": {
+      "x": 0.09407,
+      "y": 0.42608,
+      "width": 0.81185,
+      "height": 0.02851
+    }
+  },
+  "src-pin-note": {
+    "page": 3,
+    "bbox": {
+      "x": 0.09407,
+      "y": 0.46884,
+      "width": 0.67419,
+      "height": 0.01908
+    }
+  },
+  "sec-b-head-2": {
+    "page": 4,
+    "bbox": {
+      "x": 0.09407,
+      "y": 0.13779,
+      "width": 0.46703,
+      "height": 0.02465
+    }
+  },
+  "src-phone": {
+    "page": 4,
+    "bbox": {
+      "x": 0.09407,
+      "y": 0.18144,
+      "width": 0.67655,
+      "height": 0.02226
+    }
+  },
+  "in-phone": {
+    "page": 4,
+    "bbox": {
+      "x": 0.09407,
+      "y": 0.20726,
+      "width": 0.81185,
+      "height": 0.02851
+    }
+  },
+  "src-email": {
+    "page": 4,
+    "bbox": {
+      "x": 0.09407,
+      "y": 0.25715,
+      "width": 0.63671,
+      "height": 0.02226
+    }
+  },
+  "in-email": {
+    "page": 4,
+    "bbox": {
+      "x": 0.09407,
+      "y": 0.28297,
+      "width": 0.81185,
+      "height": 0.02851
+    }
+  },
+  "src-contact-note": {
+    "page": 4,
+    "bbox": {
+      "x": 0.09407,
+      "y": 0.32573,
+      "width": 0.77759,
+      "height": 0.01908
+    }
+  },
+  "sec-c-head": {
+    "page": 5,
+    "bbox": {
+      "x": 0.09407,
+      "y": 0.13779,
+      "width": 0.30219,
+      "height": 0.02465
+    }
+  },
+  "src-support-type": {
+    "page": 5,
+    "bbox": {
+      "x": 0.09407,
+      "y": 0.18144,
+      "width": 0.81185,
+      "height": 0.02226
+    }
+  },
+  "in-support-type": {
+    "page": 5,
+    "bbox": {
+      "x": 0.09407,
+      "y": 0.20726,
+      "width": 0.40841,
+      "height": 0.02226
+    }
+  },
+  "src-amount": {
+    "page": 5,
+    "bbox": {
+      "x": 0.09407,
+      "y": 0.2509,
+      "width": 0.42365,
+      "height": 0.02226
+    }
+  },
+  "in-amount": {
+    "page": 5,
+    "bbox": {
+      "x": 0.09407,
+      "y": 0.27672,
+      "width": 0.81185,
+      "height": 0.02851
+    }
+  },
+  "src-amount-note": {
+    "page": 5,
+    "bbox": {
+      "x": 0.09407,
+      "y": 0.31948,
+      "width": 0.46629,
+      "height": 0.01908
+    }
+  },
+  "sec-c-head-2": {
+    "page": 6,
+    "bbox": {
+      "x": 0.09407,
+      "y": 0.13779,
+      "width": 0.41455,
+      "height": 0.02465
+    }
+  },
+  "src-doc-number": {
+    "page": 6,
+    "bbox": {
+      "x": 0.09407,
+      "y": 0.18144,
+      "width": 0.78036,
+      "height": 0.03977
+    }
+  },
+  "in-doc-number": {
+    "page": 6,
+    "bbox": {
+      "x": 0.09407,
+      "y": 0.22477,
+      "width": 0.81185,
+      "height": 0.02851
+    }
+  },
+  "src-declaration": {
+    "page": 6,
+    "bbox": {
+      "x": 0.09407,
+      "y": 0.27466,
+      "width": 0.8066,
+      "height": 0.02226
+    }
+  },
+  "in-declaration": {
+    "page": 6,
+    "bbox": {
+      "x": 0.09407,
+      "y": 0.30048,
+      "width": 0.45396,
+      "height": 0.02226
+    }
+  },
+  "src-docs-head": {
+    "page": 6,
+    "bbox": {
+      "x": 0.09407,
+      "y": 0.35125,
+      "width": 0.21754,
+      "height": 0.02465
+    }
+  },
+  "src-doc-id": {
+    "page": 6,
+    "bbox": {
+      "x": 0.09407,
+      "y": 0.3949,
+      "width": 0.81185,
+      "height": 0.03977
+    }
+  },
+  "src-doc-income": {
+    "page": 6,
+    "bbox": {
+      "x": 0.09407,
+      "y": 0.45011,
+      "width": 0.81185,
+      "height": 0.03977
+    }
+  },
+  "src-doc-bank": {
+    "page": 6,
+    "bbox": {
+      "x": 0.09407,
+      "y": 0.50532,
+      "width": 0.75063,
+      "height": 0.03977
+    }
+  }
+}

@@ -1,0 +1,6109 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "FormFix AI",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "/"
+    }
+  ],
+  "paths": {
+    "/api/config": {
+      "get": {
+        "operationId": "get__api_config",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Config"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/sessions": {
+      "post": {
+        "operationId": "post__api_sessions",
+        "parameters": [
+          {
+            "name": "Origin",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Existing valid guest session",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SessionResult"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SessionResult"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/forms/analyze": {
+      "post": {
+        "operationId": "post__api_forms_analyze",
+        "parameters": [
+          {
+            "name": "Origin",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-CSRF-Token",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AnalyzeResult"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "guestCookie": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "file",
+                  "language"
+                ],
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "language": {
+                    "$ref": "#/components/schemas/Language"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/jobs/{jobId}": {
+      "get": {
+        "operationId": "get__api_jobs__jobId_",
+        "parameters": [
+          {
+            "name": "jobId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobResult"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "guestCookie": []
+          }
+        ]
+      }
+    },
+    "/api/forms/{formId}": {
+      "get": {
+        "operationId": "get__api_forms__formId_",
+        "parameters": [
+          {
+            "name": "formId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SessionState"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "guestCookie": []
+          }
+        ]
+      }
+    },
+    "/api/forms/{formId}/document": {
+      "get": {
+        "operationId": "get__api_forms__formId__document",
+        "parameters": [
+          {
+            "name": "formId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/pdf": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "guestCookie": []
+          }
+        ]
+      }
+    },
+    "/api/forms/{formId}/sources": {
+      "get": {
+        "operationId": "get__api_forms__formId__sources",
+        "parameters": [
+          {
+            "name": "formId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Extraction"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "guestCookie": []
+          }
+        ]
+      }
+    },
+    "/api/forms/{formId}/answers": {
+      "patch": {
+        "operationId": "patch__api_forms__formId__answers",
+        "parameters": [
+          {
+            "name": "formId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/Id"
+            }
+          },
+          {
+            "name": "Origin",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-CSRF-Token",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SavedAnswers"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "guestCookie": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AnswerPatch"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/forms/{formId}/documents": {
+      "patch": {
+        "operationId": "patch__api_forms__formId__documents",
+        "parameters": [
+          {
+            "name": "formId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/Id"
+            }
+          },
+          {
+            "name": "Origin",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-CSRF-Token",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SavedDocuments"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "guestCookie": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DocumentPatch"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/forms/{formId}/language": {
+      "post": {
+        "operationId": "post__api_forms__formId__language",
+        "parameters": [
+          {
+            "name": "formId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/Id"
+            }
+          },
+          {
+            "name": "Origin",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-CSRF-Token",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SessionState"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "guestCookie": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LanguageInput"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/forms/{formId}/fields/{fieldId}/explanation": {
+      "get": {
+        "operationId": "get__api_forms__formId__fields__fieldId__explanation",
+        "parameters": [
+          {
+            "name": "formId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/Id"
+            }
+          },
+          {
+            "name": "fieldId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/Id"
+            }
+          },
+          {
+            "name": "language",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/Language"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Explanation"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "guestCookie": []
+          }
+        ]
+      }
+    },
+    "/api/forms/{formId}/ask": {
+      "post": {
+        "operationId": "post__api_forms__formId__ask",
+        "parameters": [
+          {
+            "name": "formId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/Id"
+            }
+          },
+          {
+            "name": "Origin",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-CSRF-Token",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChatAnswer"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "guestCookie": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ask"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/forms/{formId}/validate": {
+      "post": {
+        "operationId": "post__api_forms__formId__validate",
+        "parameters": [
+          {
+            "name": "formId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/Id"
+            }
+          },
+          {
+            "name": "Origin",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-CSRF-Token",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationReport"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "guestCookie": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ValidateInput"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/forms/{formId}/export": {
+      "get": {
+        "operationId": "get__api_forms__formId__export",
+        "parameters": [
+          {
+            "name": "formId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/Id"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExportSummary"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "guestCookie": []
+          }
+        ]
+      }
+    },
+    "/api/sessions/current": {
+      "delete": {
+        "operationId": "delete__api_sessions_current",
+        "parameters": [
+          {
+            "name": "Origin",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-CSRF-Token",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Consistent API error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "guestCookie": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AnalyzeResult": {
+        "type": "object",
+        "properties": {
+          "formId": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+          },
+          "jobId": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "queued"
+            ]
+          }
+        },
+        "required": [
+          "formId",
+          "jobId",
+          "status"
+        ],
+        "additionalProperties": false
+      },
+      "AnswerPatch": {
+        "type": "object",
+        "properties": {
+          "baseRevision": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "changes": {
+            "type": "object",
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 2000
+                },
+                {
+                  "type": "boolean"
+                },
+                {
+                  "enum": [
+                    "null"
+                  ],
+                  "nullable": true
+                }
+              ]
+            }
+          },
+          "skipped": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "boolean"
+            }
+          }
+        },
+        "required": [
+          "baseRevision",
+          "changes"
+        ],
+        "additionalProperties": false
+      },
+      "AnswerValue": {
+        "anyOf": [
+          {
+            "type": "string",
+            "maxLength": 2000
+          },
+          {
+            "type": "boolean"
+          },
+          {
+            "enum": [
+              "null"
+            ],
+            "nullable": true
+          }
+        ]
+      },
+      "Answers": {
+        "type": "object",
+        "additionalProperties": {
+          "anyOf": [
+            {
+              "type": "string",
+              "maxLength": 2000
+            },
+            {
+              "type": "boolean"
+            },
+            {
+              "enum": [
+                "null"
+              ],
+              "nullable": true
+            }
+          ]
+        }
+      },
+      "ApiError": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+              },
+              "message": {
+                "type": "string",
+                "maxLength": 1000
+              },
+              "retryable": {
+                "type": "boolean"
+              },
+              "requestId": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+              },
+              "details": {
+                "type": "object",
+                "additionalProperties": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "boolean"
+                    }
+                  ]
+                }
+              }
+            },
+            "required": [
+              "code",
+              "message",
+              "retryable",
+              "requestId"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "error"
+        ],
+        "additionalProperties": false
+      },
+      "Ask": {
+        "type": "object",
+        "properties": {
+          "question": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1500
+          },
+          "fieldId": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+          },
+          "language": {
+            "type": "string",
+            "enum": [
+              "en",
+              "hi",
+              "te",
+              "mr"
+            ]
+          }
+        },
+        "required": [
+          "question",
+          "language"
+        ],
+        "additionalProperties": false
+      },
+      "Bbox": {
+        "type": "object",
+        "properties": {
+          "x": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "y": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "width": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "height": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        },
+        "required": [
+          "x",
+          "y",
+          "width",
+          "height"
+        ],
+        "additionalProperties": false
+      },
+      "Block": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+          },
+          "page": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 10
+          },
+          "quote": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4000
+          },
+          "bbox": {
+            "type": "object",
+            "properties": {
+              "x": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "y": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "width": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "height": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "required": [
+              "x",
+              "y",
+              "width",
+              "height"
+            ],
+            "additionalProperties": false
+          },
+          "origin": {
+            "type": "string",
+            "enum": [
+              "native",
+              "tesseract"
+            ]
+          },
+          "ocrConfidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100,
+            "nullable": true
+          }
+        },
+        "required": [
+          "id",
+          "page",
+          "quote",
+          "origin",
+          "ocrConfidence"
+        ],
+        "additionalProperties": false
+      },
+      "Capabilities": {
+        "type": "object",
+        "properties": {
+          "typedAnswers": {
+            "type": "boolean"
+          },
+          "groundedChat": {
+            "type": "boolean"
+          },
+          "deterministicValidation": {
+            "type": "boolean"
+          },
+          "jsonExport": {
+            "type": "boolean"
+          },
+          "officialPdfFilling": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "autoSubmission": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "documentVerification": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "fixture",
+              "live"
+            ]
+          },
+          "templateVerified": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "typedAnswers",
+          "groundedChat",
+          "deterministicValidation",
+          "jsonExport",
+          "officialPdfFilling",
+          "autoSubmission",
+          "documentVerification",
+          "mode",
+          "templateVerified"
+        ],
+        "additionalProperties": false
+      },
+      "ChatAnswer": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "answered",
+              "not_found",
+              "needs_clarification"
+            ]
+          },
+          "answer": {
+            "type": "string",
+            "maxLength": 6000
+          },
+          "language": {
+            "type": "string",
+            "enum": [
+              "en",
+              "hi",
+              "te",
+              "mr"
+            ]
+          },
+          "sources": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                },
+                "page": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 10
+                },
+                "quote": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 4000
+                },
+                "bbox": {
+                  "type": "object",
+                  "properties": {
+                    "x": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "y": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "width": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "height": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    }
+                  },
+                  "required": [
+                    "x",
+                    "y",
+                    "width",
+                    "height"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "id",
+                "page",
+                "quote"
+              ],
+              "additionalProperties": false
+            },
+            "maxItems": 100
+          },
+          "clarificationQuestion": {
+            "type": "string",
+            "maxLength": 500
+          }
+        },
+        "required": [
+          "status",
+          "answer",
+          "language",
+          "sources"
+        ],
+        "additionalProperties": false
+      },
+      "ChatWire": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "answered",
+              "not_found",
+              "needs_clarification"
+            ]
+          },
+          "answer": {
+            "type": "string",
+            "maxLength": 6000
+          },
+          "language": {
+            "type": "string",
+            "enum": [
+              "en",
+              "hi",
+              "te",
+              "mr"
+            ]
+          },
+          "clarificationQuestion": {
+            "type": "string",
+            "maxLength": 500
+          },
+          "sourceIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+            }
+          }
+        },
+        "required": [
+          "status",
+          "answer",
+          "language",
+          "sourceIds"
+        ],
+        "additionalProperties": false
+      },
+      "Condition": {
+        "type": "object",
+        "properties": {
+          "fieldId": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+          },
+          "op": {
+            "type": "string",
+            "enum": [
+              "equals"
+            ]
+          },
+          "value": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 200
+              },
+              {
+                "type": "boolean"
+              }
+            ]
+          }
+        },
+        "required": [
+          "fieldId",
+          "op",
+          "value"
+        ],
+        "additionalProperties": false
+      },
+      "Config": {
+        "type": "object",
+        "properties": {
+          "limits": {
+            "type": "object",
+            "properties": {
+              "maxBytes": {
+                "type": "integer"
+              },
+              "maxPages": {
+                "type": "integer"
+              },
+              "retentionHours": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "maxBytes",
+              "maxPages",
+              "retentionHours"
+            ],
+            "additionalProperties": false
+          },
+          "supportedLanguages": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "en",
+                "hi",
+                "te",
+                "mr"
+              ]
+            }
+          },
+          "capabilities": {
+            "type": "object",
+            "properties": {
+              "typedAnswers": {
+                "type": "boolean"
+              },
+              "groundedChat": {
+                "type": "boolean"
+              },
+              "deterministicValidation": {
+                "type": "boolean"
+              },
+              "jsonExport": {
+                "type": "boolean"
+              },
+              "officialPdfFilling": {
+                "type": "boolean",
+                "enum": [
+                  false
+                ]
+              },
+              "autoSubmission": {
+                "type": "boolean",
+                "enum": [
+                  false
+                ]
+              },
+              "documentVerification": {
+                "type": "boolean",
+                "enum": [
+                  false
+                ]
+              },
+              "mode": {
+                "type": "string",
+                "enum": [
+                  "fixture",
+                  "live"
+                ]
+              },
+              "templateVerified": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "typedAnswers",
+              "groundedChat",
+              "deterministicValidation",
+              "jsonExport",
+              "officialPdfFilling",
+              "autoSubmission",
+              "documentVerification",
+              "mode",
+              "templateVerified"
+            ],
+            "additionalProperties": false
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "fixture",
+              "live"
+            ]
+          }
+        },
+        "required": [
+          "limits",
+          "supportedLanguages",
+          "capabilities",
+          "mode"
+        ],
+        "additionalProperties": false
+      },
+      "DocumentPatch": {
+        "type": "object",
+        "properties": {
+          "baseRevision": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "changes": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "enum": [
+                "ready",
+                "not_ready",
+                "unknown",
+                "not_applicable"
+              ]
+            }
+          }
+        },
+        "required": [
+          "baseRevision",
+          "changes"
+        ],
+        "additionalProperties": false
+      },
+      "ErrorDetail": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+          },
+          "message": {
+            "type": "string",
+            "maxLength": 1000
+          },
+          "retryable": {
+            "type": "boolean"
+          },
+          "requestId": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+          },
+          "details": {
+            "type": "object",
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "boolean"
+                }
+              ]
+            }
+          }
+        },
+        "required": [
+          "code",
+          "message",
+          "retryable",
+          "requestId"
+        ],
+        "additionalProperties": false
+      },
+      "Explanation": {
+        "type": "object",
+        "properties": {
+          "fieldId": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+          },
+          "language": {
+            "type": "string",
+            "enum": [
+              "en",
+              "hi",
+              "te",
+              "mr"
+            ]
+          },
+          "meaning": {
+            "type": "string",
+            "maxLength": 3000
+          },
+          "whatToEnter": {
+            "type": "string",
+            "maxLength": 3000
+          },
+          "example": {
+            "type": "string",
+            "maxLength": 500
+          },
+          "sources": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                },
+                "page": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 10
+                },
+                "quote": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 4000
+                },
+                "bbox": {
+                  "type": "object",
+                  "properties": {
+                    "x": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "y": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "width": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "height": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    }
+                  },
+                  "required": [
+                    "x",
+                    "y",
+                    "width",
+                    "height"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "id",
+                "page",
+                "quote"
+              ],
+              "additionalProperties": false
+            },
+            "maxItems": 100
+          },
+          "needsReview": {
+            "type": "boolean"
+          },
+          "fallback": {
+            "type": "object",
+            "properties": {
+              "requestedLanguage": {
+                "type": "string",
+                "enum": [
+                  "en",
+                  "hi",
+                  "te",
+                  "mr"
+                ]
+              },
+              "reason": {
+                "type": "string",
+                "enum": [
+                  "translation_unavailable"
+                ]
+              }
+            },
+            "required": [
+              "requestedLanguage",
+              "reason"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "fieldId",
+          "language",
+          "meaning",
+          "whatToEnter",
+          "sources",
+          "needsReview"
+        ],
+        "additionalProperties": false
+      },
+      "ExplanationWire": {
+        "type": "object",
+        "properties": {
+          "fieldId": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+          },
+          "language": {
+            "type": "string",
+            "enum": [
+              "en",
+              "hi",
+              "te",
+              "mr"
+            ]
+          },
+          "meaning": {
+            "type": "string",
+            "maxLength": 3000
+          },
+          "whatToEnter": {
+            "type": "string",
+            "maxLength": 3000
+          },
+          "example": {
+            "type": "string",
+            "maxLength": 500
+          },
+          "needsReview": {
+            "type": "boolean"
+          },
+          "sourceIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+            },
+            "minItems": 1
+          }
+        },
+        "required": [
+          "fieldId",
+          "language",
+          "meaning",
+          "whatToEnter",
+          "needsReview",
+          "sourceIds"
+        ],
+        "additionalProperties": false
+      },
+      "ExportSummary": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "review_summary_not_official_form"
+            ]
+          },
+          "exportedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "state": {
+            "type": "object",
+            "properties": {
+              "form": {
+                "type": "object",
+                "properties": {
+                  "schemaVersion": {
+                    "type": "string",
+                    "enum": [
+                      "1.0"
+                    ]
+                  },
+                  "formId": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                  },
+                  "templateId": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                  },
+                  "title": {
+                    "type": "string",
+                    "maxLength": 300
+                  },
+                  "pageCount": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 10
+                  },
+                  "sections": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                        },
+                        "title": {
+                          "type": "string",
+                          "maxLength": 200
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "title"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "maxItems": 30
+                  },
+                  "fields": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                        },
+                        "sectionId": {
+                          "type": "string",
+                          "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                        },
+                        "labelOriginal": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 200
+                        },
+                        "type": {
+                          "type": "string",
+                          "enum": [
+                            "text",
+                            "date",
+                            "select",
+                            "boolean"
+                          ]
+                        },
+                        "requiredStatus": {
+                          "type": "string",
+                          "enum": [
+                            "required",
+                            "optional",
+                            "conditional",
+                            "unknown"
+                          ]
+                        },
+                        "sources": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string",
+                                "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                              },
+                              "page": {
+                                "type": "integer",
+                                "minimum": 1,
+                                "maximum": 10
+                              },
+                              "quote": {
+                                "type": "string",
+                                "minLength": 1,
+                                "maxLength": 4000
+                              },
+                              "bbox": {
+                                "type": "object",
+                                "properties": {
+                                  "x": {
+                                    "type": "number",
+                                    "minimum": 0,
+                                    "maximum": 1
+                                  },
+                                  "y": {
+                                    "type": "number",
+                                    "minimum": 0,
+                                    "maximum": 1
+                                  },
+                                  "width": {
+                                    "type": "number",
+                                    "minimum": 0,
+                                    "maximum": 1
+                                  },
+                                  "height": {
+                                    "type": "number",
+                                    "minimum": 0,
+                                    "maximum": 1
+                                  }
+                                },
+                                "required": [
+                                  "x",
+                                  "y",
+                                  "width",
+                                  "height"
+                                ],
+                                "additionalProperties": false
+                              }
+                            },
+                            "required": [
+                              "id",
+                              "page",
+                              "quote"
+                            ],
+                            "additionalProperties": false
+                          },
+                          "maxItems": 100
+                        },
+                        "inputRegion": {
+                          "type": "object",
+                          "properties": {
+                            "page": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 10
+                            },
+                            "bbox": {
+                              "type": "object",
+                              "properties": {
+                                "x": {
+                                  "type": "number",
+                                  "minimum": 0,
+                                  "maximum": 1
+                                },
+                                "y": {
+                                  "type": "number",
+                                  "minimum": 0,
+                                  "maximum": 1
+                                },
+                                "width": {
+                                  "type": "number",
+                                  "minimum": 0,
+                                  "maximum": 1
+                                },
+                                "height": {
+                                  "type": "number",
+                                  "minimum": 0,
+                                  "maximum": 1
+                                }
+                              },
+                              "required": [
+                                "x",
+                                "y",
+                                "width",
+                                "height"
+                              ],
+                              "additionalProperties": false
+                            }
+                          },
+                          "required": [
+                            "page",
+                            "bbox"
+                          ],
+                          "additionalProperties": false
+                        },
+                        "ruleIds": {
+                          "type": "array",
+                          "items": {
+                            "type": "string",
+                            "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                          }
+                        },
+                        "options": {
+                          "type": "array",
+                          "items": {
+                            "type": "string",
+                            "maxLength": 100
+                          }
+                        },
+                        "condition": {
+                          "type": "object",
+                          "properties": {
+                            "fieldId": {
+                              "type": "string",
+                              "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                            },
+                            "op": {
+                              "type": "string",
+                              "enum": [
+                                "equals"
+                              ]
+                            },
+                            "value": {
+                              "anyOf": [
+                                {
+                                  "type": "string",
+                                  "maxLength": 200
+                                },
+                                {
+                                  "type": "boolean"
+                                }
+                              ]
+                            }
+                          },
+                          "required": [
+                            "fieldId",
+                            "op",
+                            "value"
+                          ],
+                          "additionalProperties": false
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "sectionId",
+                        "labelOriginal",
+                        "type",
+                        "requiredStatus",
+                        "sources",
+                        "ruleIds"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "maxItems": 100
+                  },
+                  "documentRequirements": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                        },
+                        "label": {
+                          "type": "string",
+                          "maxLength": 300
+                        },
+                        "requiredStatus": {
+                          "type": "string",
+                          "enum": [
+                            "required",
+                            "optional",
+                            "conditional",
+                            "unknown"
+                          ]
+                        },
+                        "condition": {
+                          "type": "object",
+                          "properties": {
+                            "fieldId": {
+                              "type": "string",
+                              "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                            },
+                            "op": {
+                              "type": "string",
+                              "enum": [
+                                "equals"
+                              ]
+                            },
+                            "value": {
+                              "anyOf": [
+                                {
+                                  "type": "string",
+                                  "maxLength": 200
+                                },
+                                {
+                                  "type": "boolean"
+                                }
+                              ]
+                            }
+                          },
+                          "required": [
+                            "fieldId",
+                            "op",
+                            "value"
+                          ],
+                          "additionalProperties": false
+                        },
+                        "sources": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string",
+                                "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                              },
+                              "page": {
+                                "type": "integer",
+                                "minimum": 1,
+                                "maximum": 10
+                              },
+                              "quote": {
+                                "type": "string",
+                                "minLength": 1,
+                                "maxLength": 4000
+                              },
+                              "bbox": {
+                                "type": "object",
+                                "properties": {
+                                  "x": {
+                                    "type": "number",
+                                    "minimum": 0,
+                                    "maximum": 1
+                                  },
+                                  "y": {
+                                    "type": "number",
+                                    "minimum": 0,
+                                    "maximum": 1
+                                  },
+                                  "width": {
+                                    "type": "number",
+                                    "minimum": 0,
+                                    "maximum": 1
+                                  },
+                                  "height": {
+                                    "type": "number",
+                                    "minimum": 0,
+                                    "maximum": 1
+                                  }
+                                },
+                                "required": [
+                                  "x",
+                                  "y",
+                                  "width",
+                                  "height"
+                                ],
+                                "additionalProperties": false
+                              }
+                            },
+                            "required": [
+                              "id",
+                              "page",
+                              "quote"
+                            ],
+                            "additionalProperties": false
+                          },
+                          "maxItems": 100
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "label",
+                        "requiredStatus",
+                        "sources"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "maxItems": 50
+                  },
+                  "extractionWarnings": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "maxLength": 500
+                    },
+                    "maxItems": 100
+                  }
+                },
+                "required": [
+                  "schemaVersion",
+                  "formId",
+                  "title",
+                  "pageCount",
+                  "sections",
+                  "fields",
+                  "documentRequirements",
+                  "extractionWarnings"
+                ],
+                "additionalProperties": false
+              },
+              "language": {
+                "type": "string",
+                "enum": [
+                  "en",
+                  "hi",
+                  "te",
+                  "mr"
+                ]
+              },
+              "revision": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "answers": {
+                "type": "object",
+                "additionalProperties": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "maxLength": 2000
+                    },
+                    {
+                      "type": "boolean"
+                    },
+                    {
+                      "enum": [
+                        "null"
+                      ],
+                      "nullable": true
+                    }
+                  ]
+                }
+              },
+              "answerSkipped": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "boolean"
+                }
+              },
+              "documentReadiness": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string",
+                  "enum": [
+                    "ready",
+                    "not_ready",
+                    "unknown",
+                    "not_applicable"
+                  ]
+                }
+              },
+              "updatedAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "expiresAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "capabilities": {
+                "type": "object",
+                "properties": {
+                  "typedAnswers": {
+                    "type": "boolean"
+                  },
+                  "groundedChat": {
+                    "type": "boolean"
+                  },
+                  "deterministicValidation": {
+                    "type": "boolean"
+                  },
+                  "jsonExport": {
+                    "type": "boolean"
+                  },
+                  "officialPdfFilling": {
+                    "type": "boolean",
+                    "enum": [
+                      false
+                    ]
+                  },
+                  "autoSubmission": {
+                    "type": "boolean",
+                    "enum": [
+                      false
+                    ]
+                  },
+                  "documentVerification": {
+                    "type": "boolean",
+                    "enum": [
+                      false
+                    ]
+                  },
+                  "mode": {
+                    "type": "string",
+                    "enum": [
+                      "fixture",
+                      "live"
+                    ]
+                  },
+                  "templateVerified": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "typedAnswers",
+                  "groundedChat",
+                  "deterministicValidation",
+                  "jsonExport",
+                  "officialPdfFilling",
+                  "autoSubmission",
+                  "documentVerification",
+                  "mode",
+                  "templateVerified"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "form",
+              "language",
+              "revision",
+              "answers",
+              "documentReadiness",
+              "updatedAt",
+              "expiresAt",
+              "capabilities"
+            ],
+            "additionalProperties": false
+          },
+          "latestValidation": {
+            "type": "object",
+            "properties": {
+              "revision": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "checkedAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "issues": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                    },
+                    "severity": {
+                      "type": "string",
+                      "enum": [
+                        "error",
+                        "warning",
+                        "manual_review"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                    },
+                    "message": {
+                      "type": "string",
+                      "maxLength": 1000
+                    },
+                    "fieldId": {
+                      "type": "string",
+                      "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                    },
+                    "requirementId": {
+                      "type": "string",
+                      "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                    },
+                    "sources": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                          },
+                          "page": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 10
+                          },
+                          "quote": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 4000
+                          },
+                          "bbox": {
+                            "type": "object",
+                            "properties": {
+                              "x": {
+                                "type": "number",
+                                "minimum": 0,
+                                "maximum": 1
+                              },
+                              "y": {
+                                "type": "number",
+                                "minimum": 0,
+                                "maximum": 1
+                              },
+                              "width": {
+                                "type": "number",
+                                "minimum": 0,
+                                "maximum": 1
+                              },
+                              "height": {
+                                "type": "number",
+                                "minimum": 0,
+                                "maximum": 1
+                              }
+                            },
+                            "required": [
+                              "x",
+                              "y",
+                              "width",
+                              "height"
+                            ],
+                            "additionalProperties": false
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "page",
+                          "quote"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "maxItems": 100
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "severity",
+                    "code",
+                    "message",
+                    "sources"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "counts": {
+                "type": "object",
+                "properties": {
+                  "error": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "warning": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "manual_review": {
+                    "type": "integer",
+                    "minimum": 0
+                  }
+                },
+                "required": [
+                  "error",
+                  "warning",
+                  "manual_review"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "revision",
+              "checkedAt",
+              "issues",
+              "counts"
+            ],
+            "additionalProperties": false,
+            "nullable": true
+          },
+          "validationCurrent": {
+            "type": "boolean"
+          },
+          "unresolvedChecks": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                },
+                "severity": {
+                  "type": "string",
+                  "enum": [
+                    "error",
+                    "warning",
+                    "manual_review"
+                  ]
+                },
+                "code": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                },
+                "message": {
+                  "type": "string",
+                  "maxLength": 1000
+                },
+                "fieldId": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                },
+                "requirementId": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                },
+                "sources": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                      },
+                      "page": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 10
+                      },
+                      "quote": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 4000
+                      },
+                      "bbox": {
+                        "type": "object",
+                        "properties": {
+                          "x": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 1
+                          },
+                          "y": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 1
+                          },
+                          "width": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 1
+                          },
+                          "height": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 1
+                          }
+                        },
+                        "required": [
+                          "x",
+                          "y",
+                          "width",
+                          "height"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "page",
+                      "quote"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "maxItems": 100
+                }
+              },
+              "required": [
+                "id",
+                "severity",
+                "code",
+                "message",
+                "sources"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "kind",
+          "exportedAt",
+          "state",
+          "latestValidation",
+          "validationCurrent",
+          "unresolvedChecks",
+          "notes"
+        ],
+        "additionalProperties": false
+      },
+      "Extraction": {
+        "type": "object",
+        "properties": {
+          "pages": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "page": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 10
+                },
+                "width": {
+                  "type": "number",
+                  "exclusiveMinimum": true,
+                  "minimum": 0
+                },
+                "height": {
+                  "type": "number",
+                  "exclusiveMinimum": true,
+                  "minimum": 0
+                },
+                "rotation": {
+                  "anyOf": [
+                    {
+                      "type": "number",
+                      "enum": [
+                        0
+                      ]
+                    },
+                    {
+                      "type": "number",
+                      "enum": [
+                        90
+                      ]
+                    },
+                    {
+                      "type": "number",
+                      "enum": [
+                        180
+                      ]
+                    },
+                    {
+                      "type": "number",
+                      "enum": [
+                        270
+                      ]
+                    }
+                  ]
+                },
+                "transform": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  },
+                  "minItems": 6,
+                  "maxItems": 6
+                },
+                "origin": {
+                  "type": "string",
+                  "enum": [
+                    "native",
+                    "tesseract"
+                  ]
+                }
+              },
+              "required": [
+                "page",
+                "width",
+                "height",
+                "rotation",
+                "transform",
+                "origin"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1,
+            "maxItems": 10
+          },
+          "blocks": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                },
+                "page": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 10
+                },
+                "quote": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 4000
+                },
+                "bbox": {
+                  "type": "object",
+                  "properties": {
+                    "x": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "y": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "width": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "height": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    }
+                  },
+                  "required": [
+                    "x",
+                    "y",
+                    "width",
+                    "height"
+                  ],
+                  "additionalProperties": false
+                },
+                "origin": {
+                  "type": "string",
+                  "enum": [
+                    "native",
+                    "tesseract"
+                  ]
+                },
+                "ocrConfidence": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 100,
+                  "nullable": true
+                }
+              },
+              "required": [
+                "id",
+                "page",
+                "quote",
+                "origin",
+                "ocrConfidence"
+              ],
+              "additionalProperties": false
+            },
+            "maxItems": 20000
+          },
+          "acroFields": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "maxLength": 200
+                },
+                "type": {
+                  "type": "string",
+                  "maxLength": 100
+                }
+              },
+              "required": [
+                "name",
+                "type"
+              ],
+              "additionalProperties": false
+            },
+            "maxItems": 100
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "maxLength": 500
+            },
+            "maxItems": 100
+          }
+        },
+        "required": [
+          "pages",
+          "blocks",
+          "acroFields",
+          "warnings"
+        ],
+        "additionalProperties": false
+      },
+      "Fallback": {
+        "type": "object",
+        "properties": {
+          "requestedLanguage": {
+            "type": "string",
+            "enum": [
+              "en",
+              "hi",
+              "te",
+              "mr"
+            ]
+          },
+          "reason": {
+            "type": "string",
+            "enum": [
+              "translation_unavailable"
+            ]
+          }
+        },
+        "required": [
+          "requestedLanguage",
+          "reason"
+        ],
+        "additionalProperties": false
+      },
+      "Field": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+          },
+          "sectionId": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+          },
+          "labelOriginal": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "text",
+              "date",
+              "select",
+              "boolean"
+            ]
+          },
+          "requiredStatus": {
+            "type": "string",
+            "enum": [
+              "required",
+              "optional",
+              "conditional",
+              "unknown"
+            ]
+          },
+          "sources": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                },
+                "page": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 10
+                },
+                "quote": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 4000
+                },
+                "bbox": {
+                  "type": "object",
+                  "properties": {
+                    "x": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "y": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "width": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "height": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    }
+                  },
+                  "required": [
+                    "x",
+                    "y",
+                    "width",
+                    "height"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "id",
+                "page",
+                "quote"
+              ],
+              "additionalProperties": false
+            },
+            "maxItems": 100
+          },
+          "inputRegion": {
+            "type": "object",
+            "properties": {
+              "page": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 10
+              },
+              "bbox": {
+                "type": "object",
+                "properties": {
+                  "x": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                  },
+                  "y": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                  },
+                  "width": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                  },
+                  "height": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                  }
+                },
+                "required": [
+                  "x",
+                  "y",
+                  "width",
+                  "height"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "page",
+              "bbox"
+            ],
+            "additionalProperties": false
+          },
+          "ruleIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+            }
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "maxLength": 100
+            }
+          },
+          "condition": {
+            "type": "object",
+            "properties": {
+              "fieldId": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+              },
+              "op": {
+                "type": "string",
+                "enum": [
+                  "equals"
+                ]
+              },
+              "value": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "maxLength": 200
+                  },
+                  {
+                    "type": "boolean"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "fieldId",
+              "op",
+              "value"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "id",
+          "sectionId",
+          "labelOriginal",
+          "type",
+          "requiredStatus",
+          "sources",
+          "ruleIds"
+        ],
+        "additionalProperties": false
+      },
+      "FormModel": {
+        "type": "object",
+        "properties": {
+          "schemaVersion": {
+            "type": "string",
+            "enum": [
+              "1.0"
+            ]
+          },
+          "formId": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+          },
+          "templateId": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 300
+          },
+          "pageCount": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 10
+          },
+          "sections": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                },
+                "title": {
+                  "type": "string",
+                  "maxLength": 200
+                }
+              },
+              "required": [
+                "id",
+                "title"
+              ],
+              "additionalProperties": false
+            },
+            "maxItems": 30
+          },
+          "fields": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                },
+                "sectionId": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                },
+                "labelOriginal": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "text",
+                    "date",
+                    "select",
+                    "boolean"
+                  ]
+                },
+                "requiredStatus": {
+                  "type": "string",
+                  "enum": [
+                    "required",
+                    "optional",
+                    "conditional",
+                    "unknown"
+                  ]
+                },
+                "sources": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                      },
+                      "page": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 10
+                      },
+                      "quote": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 4000
+                      },
+                      "bbox": {
+                        "type": "object",
+                        "properties": {
+                          "x": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 1
+                          },
+                          "y": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 1
+                          },
+                          "width": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 1
+                          },
+                          "height": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 1
+                          }
+                        },
+                        "required": [
+                          "x",
+                          "y",
+                          "width",
+                          "height"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "page",
+                      "quote"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "maxItems": 100
+                },
+                "inputRegion": {
+                  "type": "object",
+                  "properties": {
+                    "page": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 10
+                    },
+                    "bbox": {
+                      "type": "object",
+                      "properties": {
+                        "x": {
+                          "type": "number",
+                          "minimum": 0,
+                          "maximum": 1
+                        },
+                        "y": {
+                          "type": "number",
+                          "minimum": 0,
+                          "maximum": 1
+                        },
+                        "width": {
+                          "type": "number",
+                          "minimum": 0,
+                          "maximum": 1
+                        },
+                        "height": {
+                          "type": "number",
+                          "minimum": 0,
+                          "maximum": 1
+                        }
+                      },
+                      "required": [
+                        "x",
+                        "y",
+                        "width",
+                        "height"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "required": [
+                    "page",
+                    "bbox"
+                  ],
+                  "additionalProperties": false
+                },
+                "ruleIds": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                  }
+                },
+                "options": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "maxLength": 100
+                  }
+                },
+                "condition": {
+                  "type": "object",
+                  "properties": {
+                    "fieldId": {
+                      "type": "string",
+                      "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                    },
+                    "op": {
+                      "type": "string",
+                      "enum": [
+                        "equals"
+                      ]
+                    },
+                    "value": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "maxLength": 200
+                        },
+                        {
+                          "type": "boolean"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "fieldId",
+                    "op",
+                    "value"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "id",
+                "sectionId",
+                "labelOriginal",
+                "type",
+                "requiredStatus",
+                "sources",
+                "ruleIds"
+              ],
+              "additionalProperties": false
+            },
+            "maxItems": 100
+          },
+          "documentRequirements": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                },
+                "label": {
+                  "type": "string",
+                  "maxLength": 300
+                },
+                "requiredStatus": {
+                  "type": "string",
+                  "enum": [
+                    "required",
+                    "optional",
+                    "conditional",
+                    "unknown"
+                  ]
+                },
+                "condition": {
+                  "type": "object",
+                  "properties": {
+                    "fieldId": {
+                      "type": "string",
+                      "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                    },
+                    "op": {
+                      "type": "string",
+                      "enum": [
+                        "equals"
+                      ]
+                    },
+                    "value": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "maxLength": 200
+                        },
+                        {
+                          "type": "boolean"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "fieldId",
+                    "op",
+                    "value"
+                  ],
+                  "additionalProperties": false
+                },
+                "sources": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                      },
+                      "page": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 10
+                      },
+                      "quote": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 4000
+                      },
+                      "bbox": {
+                        "type": "object",
+                        "properties": {
+                          "x": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 1
+                          },
+                          "y": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 1
+                          },
+                          "width": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 1
+                          },
+                          "height": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 1
+                          }
+                        },
+                        "required": [
+                          "x",
+                          "y",
+                          "width",
+                          "height"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "page",
+                      "quote"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "maxItems": 100
+                }
+              },
+              "required": [
+                "id",
+                "label",
+                "requiredStatus",
+                "sources"
+              ],
+              "additionalProperties": false
+            },
+            "maxItems": 50
+          },
+          "extractionWarnings": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "maxLength": 500
+            },
+            "maxItems": 100
+          }
+        },
+        "required": [
+          "schemaVersion",
+          "formId",
+          "title",
+          "pageCount",
+          "sections",
+          "fields",
+          "documentRequirements",
+          "extractionWarnings"
+        ],
+        "additionalProperties": false
+      },
+      "Id": {
+        "type": "string",
+        "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+      },
+      "Iso": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "Issue": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+          },
+          "severity": {
+            "type": "string",
+            "enum": [
+              "error",
+              "warning",
+              "manual_review"
+            ]
+          },
+          "code": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+          },
+          "message": {
+            "type": "string",
+            "maxLength": 1000
+          },
+          "fieldId": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+          },
+          "requirementId": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+          },
+          "sources": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                },
+                "page": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 10
+                },
+                "quote": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 4000
+                },
+                "bbox": {
+                  "type": "object",
+                  "properties": {
+                    "x": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "y": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "width": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "height": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    }
+                  },
+                  "required": [
+                    "x",
+                    "y",
+                    "width",
+                    "height"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "id",
+                "page",
+                "quote"
+              ],
+              "additionalProperties": false
+            },
+            "maxItems": 100
+          }
+        },
+        "required": [
+          "id",
+          "severity",
+          "code",
+          "message",
+          "sources"
+        ],
+        "additionalProperties": false
+      },
+      "JobResult": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "queued",
+              "running",
+              "ready",
+              "needs_review",
+              "failed"
+            ]
+          },
+          "stage": {
+            "type": "string",
+            "enum": [
+              "queued",
+              "extracting",
+              "matching",
+              "complete",
+              "failed"
+            ]
+          },
+          "formId": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+          },
+          "error": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+              },
+              "message": {
+                "type": "string",
+                "maxLength": 1000
+              },
+              "retryable": {
+                "type": "boolean"
+              },
+              "requestId": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+              },
+              "details": {
+                "type": "object",
+                "additionalProperties": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "boolean"
+                    }
+                  ]
+                }
+              }
+            },
+            "required": [
+              "code",
+              "message",
+              "retryable",
+              "requestId"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "status",
+          "stage",
+          "formId"
+        ],
+        "additionalProperties": false
+      },
+      "Language": {
+        "type": "string",
+        "enum": [
+          "en",
+          "hi",
+          "te",
+          "mr"
+        ]
+      },
+      "LanguageInput": {
+        "type": "object",
+        "properties": {
+          "language": {
+            "type": "string",
+            "enum": [
+              "en",
+              "hi",
+              "te",
+              "mr"
+            ]
+          }
+        },
+        "required": [
+          "language"
+        ],
+        "additionalProperties": false
+      },
+      "ProposedStructure": {
+        "type": "object",
+        "properties": {
+          "sections": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                },
+                "title": {
+                  "type": "string",
+                  "maxLength": 200
+                }
+              },
+              "required": [
+                "id",
+                "title"
+              ],
+              "additionalProperties": false
+            },
+            "maxItems": 30
+          },
+          "fields": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                },
+                "sectionId": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                },
+                "labelOriginal": {
+                  "type": "string",
+                  "maxLength": 200
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "text",
+                    "date",
+                    "select",
+                    "boolean"
+                  ]
+                },
+                "requiredStatus": {
+                  "type": "string",
+                  "enum": [
+                    "required",
+                    "optional",
+                    "conditional",
+                    "unknown"
+                  ]
+                },
+                "sourceIds": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                  },
+                  "minItems": 1
+                },
+                "options": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "maxLength": 100
+                  }
+                }
+              },
+              "required": [
+                "id",
+                "sectionId",
+                "labelOriginal",
+                "type",
+                "requiredStatus",
+                "sourceIds"
+              ],
+              "additionalProperties": false
+            },
+            "maxItems": 100
+          },
+          "requirements": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                },
+                "label": {
+                  "type": "string",
+                  "maxLength": 300
+                },
+                "requiredStatus": {
+                  "type": "string",
+                  "enum": [
+                    "required",
+                    "optional",
+                    "conditional",
+                    "unknown"
+                  ]
+                },
+                "sourceIds": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                  },
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "id",
+                "label",
+                "requiredStatus",
+                "sourceIds"
+              ],
+              "additionalProperties": false
+            },
+            "maxItems": 50
+          },
+          "ambiguities": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "maxLength": 500
+            },
+            "maxItems": 50
+          },
+          "candidateConstraints": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "description": {
+                  "type": "string",
+                  "maxLength": 500
+                },
+                "sourceIds": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                  },
+                  "minItems": 1
+                },
+                "verified": {
+                  "type": "boolean",
+                  "enum": [
+                    false
+                  ]
+                }
+              },
+              "required": [
+                "description",
+                "sourceIds",
+                "verified"
+              ],
+              "additionalProperties": false
+            },
+            "maxItems": 100
+          }
+        },
+        "required": [
+          "sections",
+          "fields",
+          "requirements",
+          "ambiguities",
+          "candidateConstraints"
+        ],
+        "additionalProperties": false
+      },
+      "Readiness": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string",
+          "enum": [
+            "ready",
+            "not_ready",
+            "unknown",
+            "not_applicable"
+          ]
+        }
+      },
+      "ReadinessValue": {
+        "type": "string",
+        "enum": [
+          "ready",
+          "not_ready",
+          "unknown",
+          "not_applicable"
+        ]
+      },
+      "RequiredStatus": {
+        "type": "string",
+        "enum": [
+          "required",
+          "optional",
+          "conditional",
+          "unknown"
+        ]
+      },
+      "Requirement": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+          },
+          "label": {
+            "type": "string",
+            "maxLength": 300
+          },
+          "requiredStatus": {
+            "type": "string",
+            "enum": [
+              "required",
+              "optional",
+              "conditional",
+              "unknown"
+            ]
+          },
+          "condition": {
+            "type": "object",
+            "properties": {
+              "fieldId": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+              },
+              "op": {
+                "type": "string",
+                "enum": [
+                  "equals"
+                ]
+              },
+              "value": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "maxLength": 200
+                  },
+                  {
+                    "type": "boolean"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "fieldId",
+              "op",
+              "value"
+            ],
+            "additionalProperties": false
+          },
+          "sources": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                },
+                "page": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 10
+                },
+                "quote": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 4000
+                },
+                "bbox": {
+                  "type": "object",
+                  "properties": {
+                    "x": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "y": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "width": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "height": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    }
+                  },
+                  "required": [
+                    "x",
+                    "y",
+                    "width",
+                    "height"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "id",
+                "page",
+                "quote"
+              ],
+              "additionalProperties": false
+            },
+            "maxItems": 100
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "requiredStatus",
+          "sources"
+        ],
+        "additionalProperties": false
+      },
+      "Revision": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "Rule": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+          },
+          "version": {
+            "type": "number",
+            "enum": [
+              1
+            ]
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "required",
+              "options",
+              "length",
+              "pattern",
+              "date",
+              "equals",
+              "conditional"
+            ]
+          },
+          "fieldId": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+          },
+          "params": {
+            "type": "object",
+            "properties": {
+              "min": {
+                "type": "number"
+              },
+              "max": {
+                "type": "number"
+              },
+              "pattern": {
+                "type": "string",
+                "enum": [
+                  "six_digits",
+                  "support_number"
+                ]
+              },
+              "options": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "from": {
+                "type": "string"
+              },
+              "to": {
+                "type": "string"
+              },
+              "otherField": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+              },
+              "condition": {
+                "type": "object",
+                "properties": {
+                  "fieldId": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                  },
+                  "op": {
+                    "type": "string",
+                    "enum": [
+                      "equals"
+                    ]
+                  },
+                  "value": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "maxLength": 200
+                      },
+                      {
+                        "type": "boolean"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "fieldId",
+                  "op",
+                  "value"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "additionalProperties": false
+          },
+          "sourceIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+            },
+            "minItems": 1
+          },
+          "provenance": {
+            "type": "string",
+            "enum": [
+              "template_verified"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "version",
+          "kind",
+          "fieldId",
+          "params",
+          "sourceIds",
+          "provenance"
+        ],
+        "additionalProperties": false
+      },
+      "SavedAnswers": {
+        "type": "object",
+        "properties": {
+          "revision": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "answers": {
+            "type": "object",
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 2000
+                },
+                {
+                  "type": "boolean"
+                },
+                {
+                  "enum": [
+                    "null"
+                  ],
+                  "nullable": true
+                }
+              ]
+            }
+          }
+        },
+        "required": [
+          "revision",
+          "answers"
+        ],
+        "additionalProperties": false
+      },
+      "SavedDocuments": {
+        "type": "object",
+        "properties": {
+          "revision": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "documentReadiness": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "enum": [
+                "ready",
+                "not_ready",
+                "unknown",
+                "not_applicable"
+              ]
+            }
+          }
+        },
+        "required": [
+          "revision",
+          "documentReadiness"
+        ],
+        "additionalProperties": false
+      },
+      "SessionResult": {
+        "type": "object",
+        "properties": {
+          "csrfToken": {
+            "type": "string",
+            "minLength": 32
+          },
+          "expiresAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "csrfToken",
+          "expiresAt"
+        ],
+        "additionalProperties": false
+      },
+      "SessionState": {
+        "type": "object",
+        "properties": {
+          "form": {
+            "type": "object",
+            "properties": {
+              "schemaVersion": {
+                "type": "string",
+                "enum": [
+                  "1.0"
+                ]
+              },
+              "formId": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+              },
+              "templateId": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+              },
+              "title": {
+                "type": "string",
+                "maxLength": 300
+              },
+              "pageCount": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 10
+              },
+              "sections": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                    },
+                    "title": {
+                      "type": "string",
+                      "maxLength": 200
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "title"
+                  ],
+                  "additionalProperties": false
+                },
+                "maxItems": 30
+              },
+              "fields": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                    },
+                    "sectionId": {
+                      "type": "string",
+                      "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                    },
+                    "labelOriginal": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 200
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "text",
+                        "date",
+                        "select",
+                        "boolean"
+                      ]
+                    },
+                    "requiredStatus": {
+                      "type": "string",
+                      "enum": [
+                        "required",
+                        "optional",
+                        "conditional",
+                        "unknown"
+                      ]
+                    },
+                    "sources": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                          },
+                          "page": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 10
+                          },
+                          "quote": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 4000
+                          },
+                          "bbox": {
+                            "type": "object",
+                            "properties": {
+                              "x": {
+                                "type": "number",
+                                "minimum": 0,
+                                "maximum": 1
+                              },
+                              "y": {
+                                "type": "number",
+                                "minimum": 0,
+                                "maximum": 1
+                              },
+                              "width": {
+                                "type": "number",
+                                "minimum": 0,
+                                "maximum": 1
+                              },
+                              "height": {
+                                "type": "number",
+                                "minimum": 0,
+                                "maximum": 1
+                              }
+                            },
+                            "required": [
+                              "x",
+                              "y",
+                              "width",
+                              "height"
+                            ],
+                            "additionalProperties": false
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "page",
+                          "quote"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "maxItems": 100
+                    },
+                    "inputRegion": {
+                      "type": "object",
+                      "properties": {
+                        "page": {
+                          "type": "integer",
+                          "minimum": 1,
+                          "maximum": 10
+                        },
+                        "bbox": {
+                          "type": "object",
+                          "properties": {
+                            "x": {
+                              "type": "number",
+                              "minimum": 0,
+                              "maximum": 1
+                            },
+                            "y": {
+                              "type": "number",
+                              "minimum": 0,
+                              "maximum": 1
+                            },
+                            "width": {
+                              "type": "number",
+                              "minimum": 0,
+                              "maximum": 1
+                            },
+                            "height": {
+                              "type": "number",
+                              "minimum": 0,
+                              "maximum": 1
+                            }
+                          },
+                          "required": [
+                            "x",
+                            "y",
+                            "width",
+                            "height"
+                          ],
+                          "additionalProperties": false
+                        }
+                      },
+                      "required": [
+                        "page",
+                        "bbox"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "ruleIds": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                      }
+                    },
+                    "options": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "maxLength": 100
+                      }
+                    },
+                    "condition": {
+                      "type": "object",
+                      "properties": {
+                        "fieldId": {
+                          "type": "string",
+                          "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                        },
+                        "op": {
+                          "type": "string",
+                          "enum": [
+                            "equals"
+                          ]
+                        },
+                        "value": {
+                          "anyOf": [
+                            {
+                              "type": "string",
+                              "maxLength": 200
+                            },
+                            {
+                              "type": "boolean"
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "fieldId",
+                        "op",
+                        "value"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "sectionId",
+                    "labelOriginal",
+                    "type",
+                    "requiredStatus",
+                    "sources",
+                    "ruleIds"
+                  ],
+                  "additionalProperties": false
+                },
+                "maxItems": 100
+              },
+              "documentRequirements": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                    },
+                    "label": {
+                      "type": "string",
+                      "maxLength": 300
+                    },
+                    "requiredStatus": {
+                      "type": "string",
+                      "enum": [
+                        "required",
+                        "optional",
+                        "conditional",
+                        "unknown"
+                      ]
+                    },
+                    "condition": {
+                      "type": "object",
+                      "properties": {
+                        "fieldId": {
+                          "type": "string",
+                          "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                        },
+                        "op": {
+                          "type": "string",
+                          "enum": [
+                            "equals"
+                          ]
+                        },
+                        "value": {
+                          "anyOf": [
+                            {
+                              "type": "string",
+                              "maxLength": 200
+                            },
+                            {
+                              "type": "boolean"
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "fieldId",
+                        "op",
+                        "value"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "sources": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                          },
+                          "page": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 10
+                          },
+                          "quote": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 4000
+                          },
+                          "bbox": {
+                            "type": "object",
+                            "properties": {
+                              "x": {
+                                "type": "number",
+                                "minimum": 0,
+                                "maximum": 1
+                              },
+                              "y": {
+                                "type": "number",
+                                "minimum": 0,
+                                "maximum": 1
+                              },
+                              "width": {
+                                "type": "number",
+                                "minimum": 0,
+                                "maximum": 1
+                              },
+                              "height": {
+                                "type": "number",
+                                "minimum": 0,
+                                "maximum": 1
+                              }
+                            },
+                            "required": [
+                              "x",
+                              "y",
+                              "width",
+                              "height"
+                            ],
+                            "additionalProperties": false
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "page",
+                          "quote"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "maxItems": 100
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "label",
+                    "requiredStatus",
+                    "sources"
+                  ],
+                  "additionalProperties": false
+                },
+                "maxItems": 50
+              },
+              "extractionWarnings": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "maxLength": 500
+                },
+                "maxItems": 100
+              }
+            },
+            "required": [
+              "schemaVersion",
+              "formId",
+              "title",
+              "pageCount",
+              "sections",
+              "fields",
+              "documentRequirements",
+              "extractionWarnings"
+            ],
+            "additionalProperties": false
+          },
+          "language": {
+            "type": "string",
+            "enum": [
+              "en",
+              "hi",
+              "te",
+              "mr"
+            ]
+          },
+          "revision": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "answers": {
+            "type": "object",
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 2000
+                },
+                {
+                  "type": "boolean"
+                },
+                {
+                  "enum": [
+                    "null"
+                  ],
+                  "nullable": true
+                }
+              ]
+            }
+          },
+          "answerSkipped": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "boolean"
+            }
+          },
+          "documentReadiness": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "enum": [
+                "ready",
+                "not_ready",
+                "unknown",
+                "not_applicable"
+              ]
+            }
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "expiresAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "capabilities": {
+            "type": "object",
+            "properties": {
+              "typedAnswers": {
+                "type": "boolean"
+              },
+              "groundedChat": {
+                "type": "boolean"
+              },
+              "deterministicValidation": {
+                "type": "boolean"
+              },
+              "jsonExport": {
+                "type": "boolean"
+              },
+              "officialPdfFilling": {
+                "type": "boolean",
+                "enum": [
+                  false
+                ]
+              },
+              "autoSubmission": {
+                "type": "boolean",
+                "enum": [
+                  false
+                ]
+              },
+              "documentVerification": {
+                "type": "boolean",
+                "enum": [
+                  false
+                ]
+              },
+              "mode": {
+                "type": "string",
+                "enum": [
+                  "fixture",
+                  "live"
+                ]
+              },
+              "templateVerified": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "typedAnswers",
+              "groundedChat",
+              "deterministicValidation",
+              "jsonExport",
+              "officialPdfFilling",
+              "autoSubmission",
+              "documentVerification",
+              "mode",
+              "templateVerified"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "form",
+          "language",
+          "revision",
+          "answers",
+          "documentReadiness",
+          "updatedAt",
+          "expiresAt",
+          "capabilities"
+        ],
+        "additionalProperties": false
+      },
+      "SourceRef": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+          },
+          "page": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 10
+          },
+          "quote": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4000
+          },
+          "bbox": {
+            "type": "object",
+            "properties": {
+              "x": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "y": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "width": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "height": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "required": [
+              "x",
+              "y",
+              "width",
+              "height"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "id",
+          "page",
+          "quote"
+        ],
+        "additionalProperties": false
+      },
+      "Sources": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+            },
+            "page": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 10
+            },
+            "quote": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 4000
+            },
+            "bbox": {
+              "type": "object",
+              "properties": {
+                "x": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "y": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "width": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "height": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                }
+              },
+              "required": [
+                "x",
+                "y",
+                "width",
+                "height"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "id",
+            "page",
+            "quote"
+          ],
+          "additionalProperties": false
+        },
+        "maxItems": 100
+      },
+      "ValidateInput": {
+        "type": "object",
+        "properties": {
+          "revision": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "revision"
+        ],
+        "additionalProperties": false
+      },
+      "ValidationReport": {
+        "type": "object",
+        "properties": {
+          "revision": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "checkedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "issues": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                },
+                "severity": {
+                  "type": "string",
+                  "enum": [
+                    "error",
+                    "warning",
+                    "manual_review"
+                  ]
+                },
+                "code": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                },
+                "message": {
+                  "type": "string",
+                  "maxLength": 1000
+                },
+                "fieldId": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                },
+                "requirementId": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                },
+                "sources": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "pattern": "^[a-zA-Z0-9_-]{1,100}$"
+                      },
+                      "page": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 10
+                      },
+                      "quote": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 4000
+                      },
+                      "bbox": {
+                        "type": "object",
+                        "properties": {
+                          "x": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 1
+                          },
+                          "y": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 1
+                          },
+                          "width": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 1
+                          },
+                          "height": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 1
+                          }
+                        },
+                        "required": [
+                          "x",
+                          "y",
+                          "width",
+                          "height"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "page",
+                      "quote"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "maxItems": 100
+                }
+              },
+              "required": [
+                "id",
+                "severity",
+                "code",
+                "message",
+                "sources"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "counts": {
+            "type": "object",
+            "properties": {
+              "error": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "warning": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "manual_review": {
+                "type": "integer",
+                "minimum": 0
+              }
+            },
+            "required": [
+              "error",
+              "warning",
+              "manual_review"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "revision",
+          "checkedAt",
+          "issues",
+          "counts"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "guestCookie": {
+        "type": "apiKey",
+        "in": "cookie",
+        "name": "ff_session"
+      }
+    }
+  }
+}

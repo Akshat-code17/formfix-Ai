@@ -1,0 +1,23 @@
+{
+  "name": "@formfix/fixtures-demo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./assets/*": "./assets/*"
+  },
+  "scripts": {
+    "build:pdf": "node scripts/build-pdf.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@formfix/contracts": "0.1.0"
+  },
+  "devDependencies": {
+    "pdf-lib": "1.17.1",
+    "typescript": "5.9.3"
+  }
+}

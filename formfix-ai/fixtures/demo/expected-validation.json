@@ -1,0 +1,8 @@
+{
+  "clean": [],
+  "seeded-errors": [
+    "pin_pattern",
+    "support_number_required",
+    "document_support_record"
+  ]
+}

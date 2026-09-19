@@ -1,0 +1,190 @@
+@import 'tailwindcss';
+
+/*
+  FormFix palette. Contrast was measured, not assumed:
+    ink   #172B3A on paper #F6F5F1 ............ 13.8:1
+    muted #566470 on paper .................... 5.6:1
+    teal  #087F8C on white .................... 4.8:1  (fine for buttons)
+    teal  #087F8C on paper .................... 4.3:1  (FAILS body text)
+    teal-ink #06626D on paper ................. 6.5:1  (use this for text)
+    amber #A35A00 on paper .................... 4.8:1
+    red   #B42318 on paper .................... 6.0:1
+  So #087F8C is reserved for fills, borders and highlights; text that needs
+  to read as teal uses --color-teal-ink.
+*/
+@theme {
+  --color-paper: #f6f5f1;
+  --color-panel: #ffffff;
+  --color-ink: #172b3a;
+  --color-muted: #566470;
+  --color-line: #e2dfd8;
+  --color-line-strong: #cfcbc1;
+
+  --color-teal: #087f8c;
+  --color-teal-ink: #06626d;
+  --color-teal-soft: #e4f2f3;
+  --color-teal-edge: #a8d4d8;
+
+  --color-amber: #a35a00;
+  --color-amber-soft: #fbf0df;
+  --color-amber-edge: #e8cb9a;
+
+  --color-danger: #b42318;
+  --color-danger-soft: #fdeceb;
+  --color-danger-edge: #f0b5b0;
+
+  --font-sans: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-deva: 'Noto Sans Devanagari', 'Nirmala UI', 'Mangal', 'Noto Sans', sans-serif;
+  --font-telu: 'Noto Sans Telugu', 'Nirmala UI', 'Gautami', 'Noto Sans', sans-serif;
+
+  --radius-panel: 14px;
+
+  --text-base: 1rem;
+  --text-base--line-height: 1.6;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /*
+    Script-appropriate faces. Devanagari and Telugu have taller line boxes,
+    so nothing that carries translated text may have a fixed height.
+  */
+  [lang='hi'],
+  [lang='mr'] {
+    font-family: var(--font-deva);
+    line-height: 1.75;
+  }
+
+  [lang='te'] {
+    font-family: var(--font-telu);
+    line-height: 1.8;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-teal);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background: var(--color-teal-soft);
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+}
+
+@layer components {
+  .panel {
+    background: var(--color-panel);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-panel);
+  }
+
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 100;
+  }
+
+  .skip-link:focus {
+    left: 12px;
+    top: 12px;
+    padding: 10px 14px;
+    background: var(--color-panel);
+    border: 1px solid var(--color-teal);
+    border-radius: 8px;
+  }
+}
+
+/* Source highlight: a short pulse that orients the eye, then settles. */
+@keyframes formfix-source-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgb(8 127 140 / 0.45);
+    background-color: rgb(8 127 140 / 0.3);
+  }
+  100% {
+    box-shadow: 0 0 0 10px rgb(8 127 140 / 0);
+    background-color: rgb(8 127 140 / 0.16);
+  }
+}
+
+.source-highlight {
+  background-color: rgb(8 127 140 / 0.16);
+  border: 2px solid var(--color-teal);
+  border-radius: 3px;
+  animation: formfix-source-pulse 900ms ease-out;
+}
+
+@keyframes formfix-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.enter-fade-up {
+  animation: formfix-fade-up 220ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .source-highlight {
+    animation: none;
+  }
+}
+
+/* The printed review summary. Only the summary itself reaches paper. */
+@media print {
+  body {
+    background: #fff;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .panel {
+    border-color: #999;
+    break-inside: avoid;
+  }
+
+  a[href]::after {
+    content: '';
+  }
+}
+
+.print-only {
+  display: none;
+}

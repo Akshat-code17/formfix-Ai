@@ -1,0 +1,83 @@
+{
+  "title": "Sample Student Support Application — Demo Only",
+  "synthetic": true,
+  "pageSize": { "width": 595.28, "height": 841.89 },
+  "margin": 56,
+  "pages": [
+    {
+      "page": 1,
+      "items": [
+        { "id": "p1-title", "style": "title", "text": "Sample Student Support Application — Demo Only" },
+        { "id": "p1-synthetic", "style": "note", "text": "Synthetic demonstration document. This is not an official scheme and no institution issues it. It exists only to demonstrate the FormFix AI prototype." },
+        { "style": "rule" },
+        { "id": "sec-a-head", "style": "h2", "text": "Section A — Applicant details" },
+        { "id": "src-full-name", "style": "label", "text": "1. Full name of applicant, exactly as printed on your student record. Required." },
+        { "id": "in-full-name", "style": "line" },
+        { "id": "src-dob", "style": "label", "text": "2. Date of birth. Write the date in DD/MM/YYYY format. Required." },
+        { "id": "in-dob", "style": "line" },
+        { "id": "src-enrolment", "style": "label", "text": "3. Enrolment number. Nine digits. Copy it exactly, including any leading zeros printed on your record. Required." },
+        { "id": "in-enrolment", "style": "line" }
+      ]
+    },
+    {
+      "page": 2,
+      "items": [
+        { "id": "sec-a-head-2", "style": "h2", "text": "Section A — Applicant details (continued)" },
+        { "id": "src-category", "style": "label", "text": "4. Applicant category. Tick one box only: General, Reserved, or Other. Required." },
+        { "id": "in-category", "style": "boxes", "text": "[  ] General        [  ] Reserved        [  ] Other" },
+        { "id": "src-category-other", "style": "label", "text": "5. If you ticked Other in question 4, state the category here. Leave this blank if you did not tick Other." },
+        { "id": "in-category-other", "style": "line" },
+        { "id": "src-section-a-note", "style": "note", "text": "Office use: verify Section A against the student record before processing." }
+      ]
+    },
+    {
+      "page": 3,
+      "items": [
+        { "id": "sec-b-head", "style": "h2", "text": "Section B — Address and contact" },
+        { "id": "src-address", "style": "label", "text": "6. Postal address for correspondence. Give the house or building, the street, and the locality on separate lines. Required." },
+        { "id": "in-address", "style": "box3" },
+        { "id": "src-city", "style": "label", "text": "7. City or town. Required." },
+        { "id": "in-city", "style": "line" },
+        { "id": "src-pin", "style": "label", "text": "8. PIN code. The PIN code must be six digits. Required." },
+        { "id": "in-pin", "style": "line" },
+        { "id": "src-pin-note", "style": "note", "text": "A PIN code with fewer than six digits cannot be processed and the form is returned to the applicant." }
+      ]
+    },
+    {
+      "page": 4,
+      "items": [
+        { "id": "sec-b-head-2", "style": "h2", "text": "Section B — Address and contact (continued)" },
+        { "id": "src-phone", "style": "label", "text": "9. Contact telephone number. Ten digits, written without a country code. Required." },
+        { "id": "in-phone", "style": "line" },
+        { "id": "src-email", "style": "label", "text": "10. Email address. Optional. Give an address only if you read email regularly." },
+        { "id": "in-email", "style": "line" },
+        { "id": "src-contact-note", "style": "note", "text": "The office contacts applicants by telephone. Email is used only when a telephone call does not reach the applicant." }
+      ]
+    },
+    {
+      "page": 5,
+      "items": [
+        { "id": "sec-c-head", "style": "h2", "text": "Section C — Support request" },
+        { "id": "src-support-type", "style": "label", "text": "11. Type of support requested. Choose one: Tuition fee, Hostel fee, Travel, or Equipment. Required." },
+        { "id": "in-support-type", "style": "boxes", "text": "[  ] Tuition fee    [  ] Hostel fee    [  ] Travel    [  ] Equipment" },
+        { "id": "src-amount", "style": "label", "text": "12. Amount of support requested, in whole rupees." },
+        { "id": "in-amount", "style": "line" },
+        { "id": "src-amount-note", "style": "note", "text": "Round to the nearest rupee. Do not write commas or decimal points." }
+      ]
+    },
+    {
+      "page": 6,
+      "items": [
+        { "id": "sec-c-head-2", "style": "h2", "text": "Section C — Documents and declaration" },
+        { "id": "src-doc-number", "style": "label", "text": "13. Supporting document reference number. Copy the reference number printed on the identity document you attach at (a). Required." },
+        { "id": "in-doc-number", "style": "line" },
+        { "id": "src-declaration", "style": "label", "text": "14. Declaration. Tick this box to confirm that the information given in this form is correct. Required." },
+        { "id": "in-declaration", "style": "boxes", "text": "[  ] I confirm that the information given above is correct." },
+        { "id": "src-docs-head", "style": "h2", "text": "Documents to attach" },
+        { "id": "src-doc-id", "style": "label", "text": "(a) Student identity card. If you do not yet have one, a provisional admission letter is accepted in its place. Required." },
+        { "id": "src-doc-income", "style": "label", "text": "(b) Income declaration signed by a parent or guardian. Required. It is used to decide the amount of support." },
+        { "id": "src-doc-bank", "style": "label", "text": "(c) Bank passbook first page. Required only if you asked for Travel or Equipment support in question 11." }
+      ]
+    }
+  ]
+}

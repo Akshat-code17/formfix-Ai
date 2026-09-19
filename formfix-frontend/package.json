@@ -1,0 +1,29 @@
+{
+  "name": "formfix",
+  "private": true,
+  "version": "0.1.0",
+  "description": "FormFix AI \u00e2\u20ac\u201d tell me what this form actually wants.",
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "fixtures/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w @formfix/web",
+    "build": "npm run build -w @formfix/web",
+    "preview": "npm run preview -w @formfix/web",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "test": "npm run test -w @formfix/web",
+    "test:e2e": "node scripts/test-demo.mjs",
+    "fixtures:build": "npm run build:pdf -w @formfix/fixtures-demo",
+    "dev:connected": "node scripts/dev-connected.mjs",
+    "dev:demo": "npm run dev -w @formfix/web -- --mode demo",
+    "test:connected": "node scripts/dev-connected.mjs --test",
+    "sync:backend": "node scripts/sync-backend.mjs"
+  },
+  "engines": {
+    "node": ">=20.19"
+  }
+}

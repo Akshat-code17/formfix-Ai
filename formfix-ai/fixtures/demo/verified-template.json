@@ -1,0 +1,834 @@
+{
+  "model": {
+    "schemaVersion": "1.0",
+    "formId": "fixture",
+    "templateId": "ff-demo-2026-v1",
+    "title": "Sample Student Support Application - Demo Only",
+    "pageCount": 6,
+    "sections": [
+      {
+        "id": "personal",
+        "title": "Personal details"
+      },
+      {
+        "id": "study",
+        "title": "Study details"
+      },
+      {
+        "id": "support",
+        "title": "Support request"
+      }
+    ],
+    "fields": [
+      {
+        "id": "full_name",
+        "sectionId": "personal",
+        "labelOriginal": "Full name",
+        "type": "text",
+        "requiredStatus": "required",
+        "sources": [],
+        "inputRegion": {
+          "page": 1,
+          "bbox": {
+            "x": 0.06862745098039216,
+            "y": 0.2638888888888889,
+            "width": 0.8627450980392157,
+            "height": 0.03535353535353535
+          }
+        },
+        "ruleIds": [
+          "full_name_required",
+          "full_name_length"
+        ]
+      },
+      {
+        "id": "birth_date",
+        "sectionId": "personal",
+        "labelOriginal": "Date of birth",
+        "type": "date",
+        "requiredStatus": "required",
+        "sources": [],
+        "inputRegion": {
+          "page": 1,
+          "bbox": {
+            "x": 0.06862745098039216,
+            "y": 0.44696969696969696,
+            "width": 0.8627450980392157,
+            "height": 0.03535353535353535
+          }
+        },
+        "ruleIds": [
+          "birth_date_required",
+          "birth_date_date"
+        ]
+      },
+      {
+        "id": "student_id",
+        "sectionId": "personal",
+        "labelOriginal": "Student ID",
+        "type": "text",
+        "requiredStatus": "required",
+        "sources": [],
+        "inputRegion": {
+          "page": 1,
+          "bbox": {
+            "x": 0.06862745098039216,
+            "y": 0.6300505050505051,
+            "width": 0.8627450980392157,
+            "height": 0.03535353535353535
+          }
+        },
+        "ruleIds": [
+          "student_id_required",
+          "student_id_length"
+        ]
+      },
+      {
+        "id": "address",
+        "sectionId": "personal",
+        "labelOriginal": "Postal address",
+        "type": "text",
+        "requiredStatus": "required",
+        "sources": [],
+        "inputRegion": {
+          "page": 2,
+          "bbox": {
+            "x": 0.06862745098039216,
+            "y": 0.2638888888888889,
+            "width": 0.8627450980392157,
+            "height": 0.03535353535353535
+          }
+        },
+        "ruleIds": [
+          "address_required",
+          "address_length"
+        ]
+      },
+      {
+        "id": "pin",
+        "sectionId": "personal",
+        "labelOriginal": "PIN",
+        "type": "text",
+        "requiredStatus": "required",
+        "sources": [],
+        "inputRegion": {
+          "page": 2,
+          "bbox": {
+            "x": 0.06862745098039216,
+            "y": 0.44696969696969696,
+            "width": 0.8627450980392157,
+            "height": 0.03535353535353535
+          }
+        },
+        "ruleIds": [
+          "pin_required",
+          "pin_pattern"
+        ]
+      },
+      {
+        "id": "contact",
+        "sectionId": "personal",
+        "labelOriginal": "Contact note",
+        "type": "text",
+        "requiredStatus": "optional",
+        "sources": [],
+        "inputRegion": {
+          "page": 2,
+          "bbox": {
+            "x": 0.06862745098039216,
+            "y": 0.6300505050505051,
+            "width": 0.8627450980392157,
+            "height": 0.03535353535353535
+          }
+        },
+        "ruleIds": [
+          "contact_length"
+        ]
+      },
+      {
+        "id": "course",
+        "sectionId": "study",
+        "labelOriginal": "Course",
+        "type": "select",
+        "requiredStatus": "required",
+        "sources": [],
+        "inputRegion": {
+          "page": 3,
+          "bbox": {
+            "x": 0.06862745098039216,
+            "y": 0.2638888888888889,
+            "width": 0.8627450980392157,
+            "height": 0.03535353535353535
+          }
+        },
+        "ruleIds": [
+          "course_required",
+          "course_options"
+        ],
+        "options": [
+          "Arts",
+          "Science",
+          "Commerce"
+        ]
+      },
+      {
+        "id": "study_year",
+        "sectionId": "study",
+        "labelOriginal": "Study year",
+        "type": "select",
+        "requiredStatus": "required",
+        "sources": [],
+        "inputRegion": {
+          "page": 3,
+          "bbox": {
+            "x": 0.06862745098039216,
+            "y": 0.44696969696969696,
+            "width": 0.8627450980392157,
+            "height": 0.03535353535353535
+          }
+        },
+        "ruleIds": [
+          "study_year_required",
+          "study_year_options"
+        ],
+        "options": [
+          "1",
+          "2",
+          "3"
+        ]
+      },
+      {
+        "id": "start_date",
+        "sectionId": "study",
+        "labelOriginal": "Course start date",
+        "type": "date",
+        "requiredStatus": "required",
+        "sources": [],
+        "inputRegion": {
+          "page": 3,
+          "bbox": {
+            "x": 0.06862745098039216,
+            "y": 0.6300505050505051,
+            "width": 0.8627450980392157,
+            "height": 0.03535353535353535
+          }
+        },
+        "ruleIds": [
+          "start_date_required",
+          "start_date_date"
+        ]
+      },
+      {
+        "id": "support_type",
+        "sectionId": "support",
+        "labelOriginal": "Support type",
+        "type": "select",
+        "requiredStatus": "required",
+        "sources": [],
+        "inputRegion": {
+          "page": 4,
+          "bbox": {
+            "x": 0.06862745098039216,
+            "y": 0.2638888888888889,
+            "width": 0.8627450980392157,
+            "height": 0.03535353535353535
+          }
+        },
+        "ruleIds": [
+          "support_type_required",
+          "support_type_options"
+        ],
+        "options": [
+          "standard",
+          "travel"
+        ]
+      },
+      {
+        "id": "travel_reason",
+        "sectionId": "support",
+        "labelOriginal": "Travel reason",
+        "type": "text",
+        "requiredStatus": "conditional",
+        "sources": [],
+        "inputRegion": {
+          "page": 4,
+          "bbox": {
+            "x": 0.06862745098039216,
+            "y": 0.44696969696969696,
+            "width": 0.8627450980392157,
+            "height": 0.03535353535353535
+          }
+        },
+        "ruleIds": [
+          "travel_reason_conditional",
+          "travel_reason_length"
+        ]
+      },
+      {
+        "id": "support_number",
+        "sectionId": "support",
+        "labelOriginal": "Supporting-document number",
+        "type": "text",
+        "requiredStatus": "required",
+        "sources": [],
+        "inputRegion": {
+          "page": 4,
+          "bbox": {
+            "x": 0.06862745098039216,
+            "y": 0.6300505050505051,
+            "width": 0.8627450980392157,
+            "height": 0.03535353535353535
+          }
+        },
+        "ruleIds": [
+          "support_number_required",
+          "support_number_pattern"
+        ]
+      },
+      {
+        "id": "confirm_student_id",
+        "sectionId": "support",
+        "labelOriginal": "Confirm Student ID",
+        "type": "text",
+        "requiredStatus": "required",
+        "sources": [],
+        "inputRegion": {
+          "page": 5,
+          "bbox": {
+            "x": 0.06862745098039216,
+            "y": 0.2638888888888889,
+            "width": 0.8627450980392157,
+            "height": 0.03535353535353535
+          }
+        },
+        "ruleIds": [
+          "confirm_student_id_required",
+          "confirm_student_id_equals"
+        ]
+      },
+      {
+        "id": "declaration_date",
+        "sectionId": "support",
+        "labelOriginal": "Declaration date",
+        "type": "date",
+        "requiredStatus": "required",
+        "sources": [],
+        "inputRegion": {
+          "page": 5,
+          "bbox": {
+            "x": 0.06862745098039216,
+            "y": 0.44696969696969696,
+            "width": 0.8627450980392157,
+            "height": 0.03535353535353535
+          }
+        },
+        "ruleIds": [
+          "declaration_date_required",
+          "declaration_date_date"
+        ]
+      }
+    ],
+    "documentRequirements": [
+      {
+        "id": "enrollment",
+        "label": "Enrollment note",
+        "requiredStatus": "required",
+        "sources": []
+      },
+      {
+        "id": "support_record",
+        "label": "Support record",
+        "requiredStatus": "required",
+        "sources": []
+      },
+      {
+        "id": "travel_plan",
+        "label": "Travel plan",
+        "requiredStatus": "conditional",
+        "sources": [],
+        "condition": {
+          "fieldId": "support_type",
+          "op": "equals",
+          "value": "travel"
+        }
+      }
+    ],
+    "extractionWarnings": []
+  },
+  "evidence": [
+    {
+      "id": "rule_full_name",
+      "page": 1,
+      "quote": "Enter a fictional full name, 1 to 100 characters.",
+      "label": "Full name [required]",
+      "expectedY": 0.24494949494949494
+    },
+    {
+      "id": "rule_birth_date",
+      "page": 1,
+      "quote": "Use YYYY-MM-DD, a real date from 1990-01-01 to 2010-12-31 inclusive.",
+      "label": "Date of birth [required]",
+      "expectedY": 0.42803030303030304
+    },
+    {
+      "id": "rule_student_id",
+      "page": 1,
+      "quote": "Enter 1 to 20 characters. Keep any leading zeros.",
+      "label": "Student ID [required]",
+      "expectedY": 0.6111111111111112
+    },
+    {
+      "id": "rule_address",
+      "page": 2,
+      "quote": "Enter 1 to 200 characters. No name or address matching is required.",
+      "label": "Postal address [required]",
+      "expectedY": 0.24494949494949494
+    },
+    {
+      "id": "rule_pin",
+      "page": 2,
+      "quote": "Enter exactly six ASCII digits. Leading zeros are allowed.",
+      "label": "PIN [required]",
+      "expectedY": 0.42803030303030304
+    },
+    {
+      "id": "rule_contact",
+      "page": 2,
+      "quote": "Optional: up to 100 characters; no specific phone or email format is required.",
+      "label": "Contact note [optional]",
+      "expectedY": 0.6111111111111112
+    },
+    {
+      "id": "rule_course",
+      "page": 3,
+      "quote": "Choose exactly Arts, Science, or Commerce.",
+      "label": "Course [required]",
+      "expectedY": 0.24494949494949494
+    },
+    {
+      "id": "rule_study_year",
+      "page": 3,
+      "quote": "Choose exactly 1, 2, or 3.",
+      "label": "Study year [required]",
+      "expectedY": 0.42803030303030304
+    },
+    {
+      "id": "rule_start_date",
+      "page": 3,
+      "quote": "Use YYYY-MM-DD, a real date from 2026-06-01 to 2026-09-30 inclusive.",
+      "label": "Course start date [required]",
+      "expectedY": 0.6111111111111112
+    },
+    {
+      "id": "rule_support_type",
+      "page": 4,
+      "quote": "Choose exactly standard or travel. Travel requires Travel reason and a Travel plan.",
+      "label": "Support type [required]",
+      "expectedY": 0.24494949494949494
+    },
+    {
+      "id": "rule_travel_reason",
+      "page": 4,
+      "quote": "Required only when Support type is travel; enter 1 to 200 characters.",
+      "label": "Travel reason [conditional]",
+      "expectedY": 0.42803030303030304
+    },
+    {
+      "id": "rule_support_number",
+      "page": 4,
+      "quote": "Enter SD- followed by exactly six ASCII digits, for example SD-000123 (fictional).",
+      "label": "Supporting-document number [required]",
+      "expectedY": 0.6111111111111112
+    },
+    {
+      "id": "rule_confirm_student_id",
+      "page": 5,
+      "quote": "Repeat Student ID exactly, including leading zeros.",
+      "label": "Confirm Student ID [required]",
+      "expectedY": 0.24494949494949494
+    },
+    {
+      "id": "rule_declaration_date",
+      "page": 5,
+      "quote": "Use YYYY-MM-DD, a real date from 2026-09-01 to 2026-09-30 inclusive.",
+      "label": "Declaration date [required]",
+      "expectedY": 0.42803030303030304
+    },
+    {
+      "id": "doc_enrollment",
+      "page": 6,
+      "quote": "Required for every demo application. Mark ready only if you have this fictional note.",
+      "label": "Enrollment note",
+      "expectedY": 0.30176767676767674
+    },
+    {
+      "id": "doc_support_record",
+      "page": 6,
+      "quote": "Required for every demo application. Supporting-document number does not establish readiness.",
+      "label": "Support record",
+      "expectedY": 0.42803030303030304
+    },
+    {
+      "id": "doc_travel_plan",
+      "page": 6,
+      "quote": "Required only when Support type is travel. Otherwise mark not_applicable.",
+      "label": "Travel plan",
+      "expectedY": 0.5542929292929293
+    }
+  ],
+  "rules": [
+    {
+      "id": "full_name_required",
+      "version": 1,
+      "kind": "required",
+      "fieldId": "full_name",
+      "params": {},
+      "sourceIds": [
+        "rule_full_name"
+      ],
+      "provenance": "template_verified"
+    },
+    {
+      "id": "full_name_length",
+      "version": 1,
+      "kind": "length",
+      "fieldId": "full_name",
+      "params": {
+        "min": 1,
+        "max": 100
+      },
+      "sourceIds": [
+        "rule_full_name"
+      ],
+      "provenance": "template_verified"
+    },
+    {
+      "id": "birth_date_required",
+      "version": 1,
+      "kind": "required",
+      "fieldId": "birth_date",
+      "params": {},
+      "sourceIds": [
+        "rule_birth_date"
+      ],
+      "provenance": "template_verified"
+    },
+    {
+      "id": "birth_date_date",
+      "version": 1,
+      "kind": "date",
+      "fieldId": "birth_date",
+      "params": {
+        "from": "1990-01-01",
+        "to": "2010-12-31"
+      },
+      "sourceIds": [
+        "rule_birth_date"
+      ],
+      "provenance": "template_verified"
+    },
+    {
+      "id": "student_id_required",
+      "version": 1,
+      "kind": "required",
+      "fieldId": "student_id",
+      "params": {},
+      "sourceIds": [
+        "rule_student_id"
+      ],
+      "provenance": "template_verified"
+    },
+    {
+      "id": "student_id_length",
+      "version": 1,
+      "kind": "length",
+      "fieldId": "student_id",
+      "params": {
+        "min": 1,
+        "max": 20
+      },
+      "sourceIds": [
+        "rule_student_id"
+      ],
+      "provenance": "template_verified"
+    },
+    {
+      "id": "address_required",
+      "version": 1,
+      "kind": "required",
+      "fieldId": "address",
+      "params": {},
+      "sourceIds": [
+        "rule_address"
+      ],
+      "provenance": "template_verified"
+    },
+    {
+      "id": "address_length",
+      "version": 1,
+      "kind": "length",
+      "fieldId": "address",
+      "params": {
+        "min": 1,
+        "max": 200
+      },
+      "sourceIds": [
+        "rule_address"
+      ],
+      "provenance": "template_verified"
+    },
+    {
+      "id": "pin_required",
+      "version": 1,
+      "kind": "required",
+      "fieldId": "pin",
+      "params": {},
+      "sourceIds": [
+        "rule_pin"
+      ],
+      "provenance": "template_verified"
+    },
+    {
+      "id": "pin_pattern",
+      "version": 1,
+      "kind": "pattern",
+      "fieldId": "pin",
+      "params": {
+        "pattern": "six_digits"
+      },
+      "sourceIds": [
+        "rule_pin"
+      ],
+      "provenance": "template_verified"
+    },
+    {
+      "id": "contact_length",
+      "version": 1,
+      "kind": "length",
+      "fieldId": "contact",
+      "params": {
+        "max": 100
+      },
+      "sourceIds": [
+        "rule_contact"
+      ],
+      "provenance": "template_verified"
+    },
+    {
+      "id": "course_required",
+      "version": 1,
+      "kind": "required",
+      "fieldId": "course",
+      "params": {},
+      "sourceIds": [
+        "rule_course"
+      ],
+      "provenance": "template_verified"
+    },
+    {
+      "id": "course_options",
+      "version": 1,
+      "kind": "options",
+      "fieldId": "course",
+      "params": {
+        "options": [
+          "Arts",
+          "Science",
+          "Commerce"
+        ]
+      },
+      "sourceIds": [
+        "rule_course"
+      ],
+      "provenance": "template_verified"
+    },
+    {
+      "id": "study_year_required",
+      "version": 1,
+      "kind": "required",
+      "fieldId": "study_year",
+      "params": {},
+      "sourceIds": [
+        "rule_study_year"
+      ],
+      "provenance": "template_verified"
+    },
+    {
+      "id": "study_year_options",
+      "version": 1,
+      "kind": "options",
+      "fieldId": "study_year",
+      "params": {
+        "options": [
+          "1",
+          "2",
+          "3"
+        ]
+      },
+      "sourceIds": [
+        "rule_study_year"
+      ],
+      "provenance": "template_verified"
+    },
+    {
+      "id": "start_date_required",
+      "version": 1,
+      "kind": "required",
+      "fieldId": "start_date",
+      "params": {},
+      "sourceIds": [
+        "rule_start_date"
+      ],
+      "provenance": "template_verified"
+    },
+    {
+      "id": "start_date_date",
+      "version": 1,
+      "kind": "date",
+      "fieldId": "start_date",
+      "params": {
+        "from": "2026-06-01",
+        "to": "2026-09-30"
+      },
+      "sourceIds": [
+        "rule_start_date"
+      ],
+      "provenance": "template_verified"
+    },
+    {
+      "id": "support_type_required",
+      "version": 1,
+      "kind": "required",
+      "fieldId": "support_type",
+      "params": {},
+      "sourceIds": [
+        "rule_support_type"
+      ],
+      "provenance": "template_verified"
+    },
+    {
+      "id": "support_type_options",
+      "version": 1,
+      "kind": "options",
+      "fieldId": "support_type",
+      "params": {
+        "options": [
+          "standard",
+          "travel"
+        ]
+      },
+      "sourceIds": [
+        "rule_support_type"
+      ],
+      "provenance": "template_verified"
+    },
+    {
+      "id": "travel_reason_conditional",
+      "version": 1,
+      "kind": "conditional",
+      "fieldId": "travel_reason",
+      "params": {
+        "condition": {
+          "fieldId": "support_type",
+          "op": "equals",
+          "value": "travel"
+        }
+      },
+      "sourceIds": [
+        "rule_travel_reason"
+      ],
+      "provenance": "template_verified"
+    },
+    {
+      "id": "travel_reason_length",
+      "version": 1,
+      "kind": "length",
+      "fieldId": "travel_reason",
+      "params": {
+        "max": 200
+      },
+      "sourceIds": [
+        "rule_travel_reason"
+      ],
+      "provenance": "template_verified"
+    },
+    {
+      "id": "support_number_required",
+      "version": 1,
+      "kind": "required",
+      "fieldId": "support_number",
+      "params": {},
+      "sourceIds": [
+        "rule_support_number"
+      ],
+      "provenance": "template_verified"
+    },
+    {
+      "id": "support_number_pattern",
+      "version": 1,
+      "kind": "pattern",
+      "fieldId": "support_number",
+      "params": {
+        "pattern": "support_number"
+      },
+      "sourceIds": [
+        "rule_support_number"
+      ],
+      "provenance": "template_verified"
+    },
+    {
+      "id": "confirm_student_id_required",
+      "version": 1,
+      "kind": "required",
+      "fieldId": "confirm_student_id",
+      "params": {},
+      "sourceIds": [
+        "rule_confirm_student_id"
+      ],
+      "provenance": "template_verified"
+    },
+    {
+      "id": "confirm_student_id_equals",
+      "version": 1,
+      "kind": "equals",
+      "fieldId": "confirm_student_id",
+      "params": {
+        "otherField": "student_id"
+      },
+      "sourceIds": [
+        "rule_confirm_student_id"
+      ],
+      "provenance": "template_verified"
+    },
+    {
+      "id": "declaration_date_required",
+      "version": 1,
+      "kind": "required",
+      "fieldId": "declaration_date",
+      "params": {},
+      "sourceIds": [
+        "rule_declaration_date"
+      ],
+      "provenance": "template_verified"
+    },
+    {
+      "id": "declaration_date_date",
+      "version": 1,
+      "kind": "date",
+      "fieldId": "declaration_date",
+      "params": {
+        "from": "2026-09-01",
+        "to": "2026-09-30"
+      },
+      "sourceIds": [
+        "rule_declaration_date"
+      ],
+      "provenance": "template_verified"
+    }
+  ],
+  "review": {
+    "method": "Author cross-check of generated fictional instructions and registered rules",
+    "independentInstitutionalReview": false,
+    "version": "1"
+  }
+}

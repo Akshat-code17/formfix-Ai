@@ -1,0 +1,32 @@
+name: backend-verification
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      MONGOMS_DISABLE_POSTINSTALL: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22.19.0', cache: npm}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: sudo apt-get update && sudo apt-get install -y tesseract-ocr tesseract-ocr-eng
+      - run: python -m pip install -r services/document/requirements.lock
+      - run: npm ci
+      - run: python scripts/prepare-tests.py
+      - run: npm run build && npm run schemas
+      - run: npm test
+      - run: python -m pytest services/document -q --junitxml=work/python-results.xml
+      - run: npm run test:e2e
+      - run: npm run evaluate
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: measured-evaluation
+          path: |
+            docs/evaluation-results.json
+            work/test-results.json
+            work/python-results.xml
+            work/smoke-result.json
